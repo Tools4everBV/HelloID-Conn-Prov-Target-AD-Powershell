@@ -43,7 +43,7 @@ switch($p.Name.Convention)
 
 $domainNameSuffix = "@"+$c.domainName;
 
-$UpnPrefix,$UpnDomainCorp = $p.Accounts.MicrosoftActiveDirectoryCorp.UserPrincipalName -split '@',2
+$UpnPrefix,$UpnDomainCorp = $p.Accounts.MicrosoftActiveDirectory.UserPrincipalName -split '@',2
 
 $Upn = $UpnPrefix + $domainNameSuffix
 
@@ -55,11 +55,11 @@ $account = [PSCustomObject]@{
     Title = $p.PrimaryContract.Custom.VisitekaartNaam;
     Department = $p.PrimaryContract.Department.DisplayName;
     EmployeeId = $p.ExternalId;
-    DisplayName = "PA" + $displayname 
+    DisplayName = $displayname 
     Surname = $surname
-    #EmailAddress = $p.Accounts.MicrosoftActiveDirectoryCorp.UserPrincipalName;
-    Name = $p.Accounts.MicrosoftActiveDirectoryCorp.CommonName;
-    UserPrincipalName = "pa" + $Upn;
+    #EmailAddress = $p.Accounts.MicrosoftActiveDirectory.UserPrincipalName;
+    Name = $p.Accounts.MicrosoftActiveDirectory.CommonName;
+    UserPrincipalName = $Upn;
 };
 
 if(-Not($dryRun -eq $True)) {

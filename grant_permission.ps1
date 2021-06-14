@@ -9,8 +9,8 @@ $mRef = $managerAccountReference | ConvertFrom-Json;
 
 # The permissionReference object contains the Identification object provided in the retrieve permissions call
 $pRef = $permissionReference | ConvertFrom-json;
-$aRef = "pattestpersoon"
-if(-Not($dryRun -eq $False)) {
+
+if(-Not($dryRun -eq $True)) {
     try{
         [string]$userName = $c.connection.username
         [string]$userPassword = $c.connection.userpwd

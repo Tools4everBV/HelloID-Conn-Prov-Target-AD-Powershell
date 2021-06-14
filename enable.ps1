@@ -6,12 +6,6 @@ $mRef = $managerAccountReference | ConvertFrom-Json;
 $success = $False;
 $auditLogs = New-Object Collections.Generic.List[PSCustomObject];
 
-# Retrieve account information for notifications
-#$account = [PSCustomObject]@{
-#    userName = $p.UserName;
-#};
-
-
 if(-Not($dryRun -eq $True)) {
     try{
         [string]$userName = $c.connection.username

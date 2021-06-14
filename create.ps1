@@ -66,7 +66,7 @@ switch($p.Name.Convention)
 
 $domainNameSuffix = "@"+$c.domainName;
 
-$UpnPrefix,$UpnDomainCorp = $p.Accounts.MicrosoftActiveDirectoryCorp.UserPrincipalName -split '@',2
+$UpnPrefix,$UpnDomainCorp = $p.Accounts.MicrosoftActiveDirectory.UserPrincipalName -split '@',2
 
 $Upn = $UpnPrefix + $domainNameSuffix
 
@@ -80,12 +80,11 @@ $account = [PSCustomObject]@{
     Department = $p.PrimaryContract.Department.DisplayName;
     Company = "HHNK";
     EmployeeId = $p.ExternalId;
-    DisplayName = "PA" + $displayname 
+    DisplayName = $displayname 
     Surname = $surname
-    SamAccountName = "pa" + $p.Accounts.MicrosoftActiveDirectoryCorp.SamAccountName;
-    UserPrincipalName = "pa" + $Upn;
-    #EmailAddress = $p.Accounts.MicrosoftActiveDirectoryCorp.UserPrincipalName;
-    Name = $p.Accounts.MicrosoftActiveDirectoryCorp.CommonName;
+    SamAccountName = $p.Accounts.MicrosoftActiveDirectory.SamAccountName;
+    UserPrincipalName = $Upn;
+    Name = $p.Accounts.MicrosoftActiveDirectory.CommonName;
     Path = $c.createOU;
     Password = GeneratePassword;
 };
