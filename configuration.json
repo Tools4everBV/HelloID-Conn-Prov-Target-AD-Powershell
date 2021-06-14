@@ -1,0 +1,73 @@
+[
+  {
+    "key": "connection.serverfqdn",
+    "type": "input",
+    "defaultValue": "DC01.lan.local",
+    "templateOptions": {
+      "label": "Server FQDN",
+      "placeholder": "Please enter the reference to de domain controller",
+      "required": true
+    }
+  },
+  {
+    "key": "connection.username",
+    "type": "input",
+    "defaultValue": "",
+    "templateOptions": {
+      "label": "Username",
+      "placeholder": "Please enter the username",
+      "required": true
+    }
+  },
+  {
+    "key": "connection.userpwd",
+    "type": "input",
+    "defaultValue": "",
+    "templateOptions": {
+      "label": "Password",
+      "type": "password",
+      "placeholder": "Please enter the password",
+      "required": true
+    }
+  },
+  {
+    "key": "domainName",
+    "type": "input",
+    "defaultValue": "",
+    "templateOptions": {
+      "label": "Domain",
+      "placeholder": "Domain",
+      "required": true
+    }
+  },
+  {
+    "key": "createOU",
+    "type": "input",
+    "defaultValue": "",
+    "templateOptions": {
+      "label": "Create OU",
+      "placeholder": "OU in which accounts will be created",
+      "required": true
+    }
+  },
+  {
+    "key": "enableOU",
+    "type": "input",
+    "defaultValue": "",
+    "templateOptions": {
+      "label": "Enable OU",
+      "placeholder": "OU in which accounts will be enabled",
+      "required": true
+    }
+  },
+  {
+    "key": "disableOU",
+    "type": "input",
+    "defaultValue": "",
+    "templateOptions": {
+      "label": "Disable OU",
+      "placeholder": "OU in which accounts will be disabled",
+      "required": true
+    }
+  }
+]
